@@ -1,7 +1,9 @@
 <h2>Top Heroes</h2>
 <div class="heroes-menu">
-  <a *ngFor="let hero of heroes"
-    routerLink="/detail/{{hero.id}}">
-    {{hero.name}}
-  </a>
+  <button mat-stroked-button class="fr-secondary" color="primary" *ngFor="let hero of heroes"
+      routerLink="/detail/{{hero.id}}">
+      {{hero.name}}
+  </button>
 </div>
+
+<app-hero-search></app-hero-search>

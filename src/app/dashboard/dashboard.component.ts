@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
+import { TopbarControlService } from '@intersystems/header';
 
 @Component({
   selector: 'app-dashboard',
@@ -10,10 +11,14 @@ import { HeroService } from '../hero.service';
 export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];
 
-  constructor(private heroService: HeroService) { }
+  constructor(
+    private heroService: HeroService,
+    private topbarControlService: TopbarControlService
+    ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.getHeroes();
+    this.topbarControlService.setPageTitle('Dashboard');
   }
 
   getHeroes(): void {

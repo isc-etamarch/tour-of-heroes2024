@@ -1,0 +1,27 @@
+/* AppComponent's private CSS styles */
+h1 {
+  margin-bottom: 0;
+}
+
+::ng-deep .fr-header-sidenav-container {
+  height: auto !important;
+}
+
+nav {
+  .button-container {
+    display: inline-block;
+    position: relative;
+    width: 100vh;
+  }
+
+  button {
+    background-color: transparent;
+    border: transparent;
+    color: #333695;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 3px;
+    text-align: left;
+    width: calc(100% - 6px);
+  }
+}

@@ -1,7 +1,9 @@
-<h1>{{title}}</h1>
-<nav>
-  <a routerLink="/dashboard">Dashboard</a>
-  <a routerLink="/heroes">Heroes</a>
-</nav>
-<router-outlet></router-outlet>
-<app-messages></app-messages>
+<fr-topbar
+  [appNameConfig]="appNameData"
+  [headerConfig]="headerData"
+  [menusConfig]="menuData"
+>
+  <router-outlet></router-outlet>
+  <button mat-stroked-button class="fr-tertiary" color="primary" *ngIf="messageService.messages.length" (click)="openBottomSheet()">Show Messages</button>
+  <fr-notification></fr-notification>
+</fr-topbar>
